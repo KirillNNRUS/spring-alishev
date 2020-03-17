@@ -14,6 +14,13 @@
     <bean id="popBean" class="ent.pks.PopMusic"/>
 
     <bean id="musicPlayer" class="ent.pks.MusicPlayer">
+        <constructor-arg name="musicList">
+            <list>
+                <ref bean="classicBean"/>
+                <ref bean="rockBean"/>
+                <ref bean="popBean"/>
+            </list>
+        </constructor-arg>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>

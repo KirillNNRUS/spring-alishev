@@ -11,6 +11,10 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
     public void setMusicList(Music music) {
         musicList.add(music);
     }
