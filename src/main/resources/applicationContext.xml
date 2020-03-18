@@ -13,7 +13,10 @@
     <bean id="rockBean" class="ent.pks.RockMusic"/>
     <bean id="popBean" class="ent.pks.PopMusic"/>
 
-    <bean id="musicPlayer" class="ent.pks.MusicPlayer">
+    <bean id="musicPlayer" class="ent.pks.MusicPlayer"
+          scope="prototype"
+          init-method="doInit"
+          destroy-method="doDestroy">
         <constructor-arg name="musicList">
             <list>
                 <ref bean="classicBean"/>

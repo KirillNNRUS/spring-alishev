@@ -19,6 +19,13 @@ public class MusicPlayer {
         musicList.add(music);
     }
 
+    public void doInit() {
+        System.out.println("MusicPlayer Init");
+    }
+
+    public void doDestroy() {
+        System.out.println("MusicPlayer Destroy");
+    }
 
     public String getName() {
         return name;
