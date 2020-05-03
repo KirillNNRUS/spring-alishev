@@ -3,6 +3,8 @@
 # Compiled class file
 *.class
 *.iml
+target\*
+\target\*
 
 # Log file
 *.log
