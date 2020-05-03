@@ -2,17 +2,26 @@ package ent.pks;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Random;
 
 @Component
+@Scope("prototype")
 public class MusicPlayer {
     private Music music1;
     private Music music2;
     private Music music3;
+
+    @Value("${musicPlayer.name}")
     private String name;
+
+    @Value("${musicPlayer.volume}")
     private int volume;
 
     public MusicPlayer() {
@@ -28,10 +37,12 @@ public class MusicPlayer {
         this.music3 = music3;
     }
 
+    @PostConstruct
     public void doInit() {
         System.out.println("MusicPlayer Init");
     }
 
+    @PreDestroy
     public void doDestroy() {
         System.out.println("MusicPlayer Destroy");
     }
