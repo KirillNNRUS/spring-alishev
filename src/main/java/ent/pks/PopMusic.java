@@ -1,11 +1,8 @@
 package ent.pks;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.List;
 
-@Component
 public class PopMusic implements Music {
     private List<String> songs = Arrays.asList("Pop song 01",
             "Pop song 02",
